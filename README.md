@@ -1,5 +1,14 @@
 <div dir="rtl">
 
+<p align="center"><img src="docs/assets/readme-banner.png" alt="حدث | HADATH — جاهزية مشتركة. عمليات موحّدة. استجابة مرنة." width="100%"></p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-0f5257"></a>
+  <a href="https://github.com/Moha-111/hadath/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Moha-111/hadath/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="Synthetic data only" src="https://img.shields.io/badge/data-synthetic%20only-ffd166">
+  <img alt="Status: research prototype" src="https://img.shields.io/badge/status-research%20prototype-c98a12">
+</p>
+
 # حدث | HADATH
 
 **جاهزية مشتركة. عمليات موحّدة. استجابة مرنة.**
