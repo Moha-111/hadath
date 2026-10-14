@@ -1,6 +1,6 @@
 node_modules/
 dist/
-recordings/out/
+recordings/out*/
 *.log
 .DS_Store
 .env

@@ -2,20 +2,30 @@
 // Every state change on screen comes from clicking the app's own buttons (or,
 // for a few repetitive steps, the app's built-in scenario player via runTo).
 //
-// Usage: node recordings/record.mjs <app-url> <tts-dir> <out-dir>
+// Usage: node recordings/record.mjs <app-url> <tts-dir|-> <out-dir>
 //   CHROMIUM_PATH=/path/to/chrome (optional)
+//   VIDEO_LANG=en  English UI and captions. Pass "-" as <tts-dir> for a silent
+//                  video: each line is held for a reading time based on its length.
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import path from 'node:path';
 
 const [url = 'http://localhost:4173/', ttsDir = 'recordings/out/tts', outDir = 'recordings/out'] = process.argv.slice(2);
 const narration = JSON.parse(fs.readFileSync(new URL('./narration.json', import.meta.url), 'utf8')).lines;
-const durations = JSON.parse(fs.readFileSync(path.join(ttsDir, 'durations.json'), 'utf8'));
+const EN = process.env.VIDEO_LANG === 'en';
+const readTime = (text) => Math.round(Math.min(9, Math.max(4.5, text.split(/\s+/).length * 0.36 + 2)) * 100) / 100;
+const durations = ttsDir === '-'
+  ? Object.fromEntries(narration.map((l) => [l.id, readTime(EN ? l.caption_en : l.caption)]))
+  : JSON.parse(fs.readFileSync(path.join(ttsDir, 'durations.json'), 'utf8'));
 const GAP = 0.35; // seconds of silence between lines
 
 const SCENES = {
   intro: 'حدث | HADATH', before: '١ · قبل الحدث', start: '٢ · بداية الحدث', ops: '٣ · العمليات',
   integration: '٤ · التكامل', resilience: '٥ · المرونة', citizen: '٦ · مشاركة المواطن', recovery: '٧ · التعافي', outro: 'ساهم في المشروع',
+};
+const SCENES_EN = {
+  intro: 'HADATH | حدث', before: '1 · Before the event', start: '2 · Event start', ops: '3 · Operations',
+  integration: '4 · Integration', resilience: '5 · Resilience', citizen: '6 · Citizen participation', recovery: '7 · Recovery', outro: 'Contribute',
 };
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
@@ -26,12 +36,15 @@ page.setDefaultTimeout(6000);
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 
-await page.goto(`${url}#role=manager&lang=ar`);
+await page.goto(`${url}#role=manager&lang=${EN ? 'en' : 'ar'}`);
 await page.waitForFunction(() => window.hadath);
 await page.addStyleTag({ content: '.player{display:none!important} .toasts{bottom:90px!important}' });
 await page.evaluate(() => {
-  const c = document.createElement('div'); c.className = 'vcap'; c.innerHTML = '<span id="vcap"></span>'; document.body.appendChild(c);
-  const s = document.createElement('div'); s.className = 'vscene'; s.id = 'vscene'; document.body.appendChild(s);
+  // Scene badge sits in the same column as the caption, so it stays above it even when the caption wraps.
+  const c = document.createElement('div'); c.className = 'vcap'; c.style.cssText = 'flex-direction:column;align-items:center;gap:8px';
+  const s = document.createElement('div'); s.className = 'vscene'; s.id = 'vscene'; s.style.cssText = 'position:static;transform:none';
+  const cap = document.createElement('span'); cap.id = 'vcap';
+  c.append(s, cap); document.body.appendChild(c);
   window.__errs = [];
   new MutationObserver(() => document.querySelectorAll('.toast-error').forEach((t) => { if (!window.__errs.includes(t.textContent)) window.__errs.push(t.textContent); })).observe(document.body, { childList: true, subtree: true });
 });
@@ -99,7 +112,7 @@ const ACTIONS = {
   },
   n14: async () => {
     await click('issue-directive', 500); await tab('citizen'); await focus('directive-DIR-1', { wait: 600 });
-    await click('dlang-ur', 1000); await click('dlang-en', 1000); await click('dlang-ar', 400); await click('ack-DIR-1', 400);
+    if (EN) { await click('dlang-ar', 1000); await click('dlang-ur', 1000); await click('dlang-en', 400); } else { await click('dlang-ur', 1000); await click('dlang-en', 1000); await click('dlang-ar', 400); } await click('ack-DIR-1', 400);
   },
   n15: async () => {
     await runTo('s33'); await tab('manager'); await click('start-recovery', 400);
@@ -115,7 +128,7 @@ const timeline = [];
 const t0 = Date.now();
 for (const line of narration) {
   const start = (Date.now() - tCtx) / 1000;
-  await H(([cap, scene]) => { document.getElementById('vcap').textContent = cap; document.getElementById('vscene').textContent = scene; }, [line.caption, SCENES[line.scene]]);
+  await H(([cap, scene]) => { document.getElementById('vcap').textContent = cap; document.getElementById('vscene').textContent = scene; }, [EN ? line.caption_en : line.caption, (EN ? SCENES_EN : SCENES)[line.scene]]);
   const dur = durations[line.id];
   console.error(`[${start.toFixed(1)}s] ${line.id}`);
   await (ACTIONS[line.id] ?? (async () => {}))();
@@ -123,7 +136,7 @@ for (const line of narration) {
   console.error(`   actions ${elapsed.toFixed(1)}s, audio ${dur}s`);
   const remaining = dur + GAP - elapsed;
   if (remaining > 0) await sleep(remaining * 1000);
-  timeline.push({ id: line.id, start, dur, caption: line.caption });
+  timeline.push({ id: line.id, start, dur, caption: line.caption, caption_en: line.caption_en });
 }
 await sleep(1200);
 const toastErrors = await page.evaluate(() => window.__errs);
