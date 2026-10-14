@@ -1,0 +1,17 @@
+name: "🧭 مراجعة سيناريو العمليات / Operations scenario review"
+description: "للممارسين: ملاحظات على واقعية السيناريو والأدوار / For practitioners"
+labels: ["scenario-review", "practitioners"]
+body:
+  - type: input
+    id: steps
+    attributes: { label: "الخطوات المعنية / Steps concerned", placeholder: "s13–s20" }
+  - type: textarea
+    id: finding
+    attributes: { label: "الملاحظة / Finding" }
+    validations: { required: true }
+  - type: textarea
+    id: suggestion
+    attributes: { label: "الاقتراح / Suggestion" }
+  - type: input
+    id: background
+    attributes: { label: "خلفيتك المهنية (اختياري) / Your background (optional)" }

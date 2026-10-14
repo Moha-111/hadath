@@ -1,0 +1,21 @@
+name: "🐞 خلل / Bug"
+description: "شيء لا يعمل كما هو موثّق / Something does not work as documented"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "استخدم بيانات اصطناعية فقط. لا تُرفق بيانات أو صورًا حقيقية. / Synthetic data only."
+  - type: textarea
+    id: what
+    attributes: { label: "ماذا حدث؟ / What happened?" }
+    validations: { required: true }
+  - type: textarea
+    id: steps
+    attributes: { label: "خطوات إعادة الإنتاج / Steps to reproduce", description: "الدور، خطوة السيناريو (مثل s20)، اللغة / role, scenario step, language" }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: "المتوقع / Expected" }
+  - type: input
+    id: env
+    attributes: { label: "البيئة / Environment", placeholder: "Browser, OS, Node version" }

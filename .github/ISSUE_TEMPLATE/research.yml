@@ -1,0 +1,14 @@
+name: "🔬 مقترح بحثي أو تقييم / Research or evaluation proposal"
+description: "تصميم تقييم علمي للأداء أو مراجعة للمؤشرات / Performance evaluation design or metric review"
+labels: ["research"]
+body:
+  - type: textarea
+    id: question
+    attributes: { label: "سؤال البحث / Research question" }
+    validations: { required: true }
+  - type: textarea
+    id: method
+    attributes: { label: "المنهج والمؤشرات / Method and indicators" }
+  - type: textarea
+    id: ethics
+    attributes: { label: "الاعتبارات الأخلاقية والبيانات / Ethics and data" }

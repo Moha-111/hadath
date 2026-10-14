@@ -1,0 +1,25 @@
+name: "✨ اقتراح ميزة / Feature request"
+description: "فكرة لتحسين النموذج / An idea to improve the prototype"
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: role
+    attributes:
+      label: "الدور المعني / Affected role"
+      options: ["مدير الحدث / Incident manager", "الجاهزية / Readiness", "الشريك / Partner", "المستجيب / Responder", "المواطن / Citizen", "عام / General"]
+  - type: textarea
+    id: problem
+    attributes: { label: "المشكلة أو الحاجة / Problem or need" }
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes: { label: "المقترح / Proposal" }
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: "الضوابط / Safeguards"
+      options:
+        - label: "لا يتطلب بيانات حقيقية ولا أسرارًا / Needs no real data or secrets"
+          required: true
+        - label: "لا يُسند تلقائيًا إلى منطقة خطر ولا يصدر قرارات علاجية / No auto hazard-zone assignment or treatment decisions"
+          required: true
