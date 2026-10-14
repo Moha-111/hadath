@@ -1,102 +1,118 @@
 {
  "voice": "Piper ar_JO-kareem-medium (local, offline)",
- "note": "caption = on-screen Arabic subtitle; tts = same sentence with diacritics to guide pronunciation.",
+ "note": "caption = Arabic subtitle; caption_en = English subtitle (used for the silent English video); tts = diacritized Arabic for the optional Piper narration.",
  "lines": [
   {
    "id": "n01",
    "scene": "intro",
    "caption": "«حدث» نموذج تجريبي مفتوح المصدر: ملف حدث واحد للجهات والقطاع الخاص والمواطن.",
-   "tts": "حَدَث، نَموذَجٌ تَجريبيٌّ مَفتوحُ المَصدَر: مِلَفُّ حَدَثٍ واحِدٍ لِلجِهاتِ والقِطاعِ الخاصِّ والمُواطِن."
+   "tts": "حَدَث، نَموذَجٌ تَجريبيٌّ مَفتوحُ المَصدَر: مِلَفُّ حَدَثٍ واحِدٍ لِلجِهاتِ والقِطاعِ الخاصِّ والمُواطِن.",
+   "caption_en": "HADATH is an open-source prototype: one incident file shared by agencies, the private sector and citizens."
   },
   {
    "id": "n02",
    "scene": "before",
    "caption": "قبل الحدث: فحص مزيل الرجفان يُغلق فجوة معلومات قديمة.",
-   "tts": "قَبلَ الحَدَث: فَحصُ مُزيلِ الرَّجَفانِ يُغلِقُ فَجوَةَ مَعلوماتٍ قَديمَة."
+   "tts": "قَبلَ الحَدَث: فَحصُ مُزيلِ الرَّجَفانِ يُغلِقُ فَجوَةَ مَعلوماتٍ قَديمَة.",
+   "caption_en": "Before the event: an AED inspection closes a stale-data gap."
   },
   {
    "id": "n03",
    "scene": "before",
    "caption": "ويُعتمد تدريب سارة فتفعّل توفّرها، ويسجّل شريك الاتصالات قدرته وشروطها.",
-   "tts": "وَيُعتَمَدُ تَدريبُ سارَةَ فَتُفَعِّلُ تَوَفُّرَها، وَيُسَجِّلُ شَريكُ الاتِّصالاتِ قُدرَتَهُ وَشُروطَها."
+   "tts": "وَيُعتَمَدُ تَدريبُ سارَةَ فَتُفَعِّلُ تَوَفُّرَها، وَيُسَجِّلُ شَريكُ الاتِّصالاتِ قُدرَتَهُ وَشُروطَها.",
+   "caption_en": "Sara’s training is recorded, she opts in as available, and a telecom partner registers its capability and terms."
   },
   {
    "id": "n05",
    "scene": "start",
    "caption": "بداية الحدث: يرسل مواطن بلاغًا، فيتحقق منه المدير وينشئ ملف الحدث.",
-   "tts": "بِدايَةُ الحَدَث: يُرسِلُ مُواطِنٌ بَلاغاً، فَيَتَحَقَّقُ مِنهُ المُديرُ وَيُنشِئُ مِلَفَّ الحَدَث."
+   "tts": "بِدايَةُ الحَدَث: يُرسِلُ مُواطِنٌ بَلاغاً، فَيَتَحَقَّقُ مِنهُ المُديرُ وَيُنشِئُ مِلَفَّ الحَدَث.",
+   "caption_en": "The event starts: a citizen sends a report, the manager verifies it and opens the incident file."
   },
   {
    "id": "n06",
    "scene": "start",
    "caption": "تُحدَّد الأهداف ومناطق العمل، وتبقى منطقة الخطر مغلقة.",
-   "tts": "تُحَدَّدُ الأَهدافُ وَمَناطِقُ العَمَل، وَتَبقى مِنطَقَةُ الخَطَرِ مُغلَقَة."
+   "tts": "تُحَدَّدُ الأَهدافُ وَمَناطِقُ العَمَل، وَتَبقى مِنطَقَةُ الخَطَرِ مُغلَقَة.",
+   "caption_en": "Objectives and work zones are set. The hot zone stays closed."
   },
   {
    "id": "n07",
    "scene": "ops",
    "caption": "العمليات: تُكلَّف سارة لأنها مؤهلة، مع الأداة المطلوبة، ويُكلَّف المسعف خالد.",
-   "tts": "العَمَليّات: تُكَلَّفُ سارَةُ لِأَنَّها مُؤَهَّلَة، مَعَ الأَداةِ المَطلوبَة، وَيُكَلَّفُ المُسعِفُ خالِد."
+   "tts": "العَمَليّات: تُكَلَّفُ سارَةُ لِأَنَّها مُؤَهَّلَة، مَعَ الأَداةِ المَطلوبَة، وَيُكَلَّفُ المُسعِفُ خالِد.",
+   "caption_en": "Operations: Sara is assigned because she is qualified, with the right kit. Paramedic Khaled is assigned too."
   },
   {
    "id": "n09",
    "scene": "integration",
    "caption": "التكامل: طلب نقل من القطاع الخاص يعتمده المدير، ويقبله الشريك في الملف نفسه.",
-   "tts": "التَّكامُل: طَلَبُ نَقلٍ مِنَ القِطاعِ الخاصِّ يَعتَمِدُهُ المُدير، وَيَقبَلُهُ الشَّريكُ في المِلَفِّ نَفسِه."
+   "tts": "التَّكامُل: طَلَبُ نَقلٍ مِنَ القِطاعِ الخاصِّ يَعتَمِدُهُ المُدير، وَيَقبَلُهُ الشَّريكُ في المِلَفِّ نَفسِه.",
+   "caption_en": "Integration: a private-sector transport request is approved by the manager and accepted by the partner in the same file."
   },
   {
    "id": "n10",
    "scene": "integration",
    "caption": "والاحتياج يفوق السعة الجاهزة، فيُعتمد تنفيذ دورتين.",
-   "tts": "والاحتِياجُ يَفوقُ السَّعَةَ الجاهِزَة، فَيُعتَمَدُ تَنفيذُ دَورَتَين."
+   "tts": "والاحتِياجُ يَفوقُ السَّعَةَ الجاهِزَة، فَيُعتَمَدُ تَنفيذُ دَورَتَين.",
+   "caption_en": "Demand exceeds ready capacity, so two shuttle runs are approved."
   },
   {
    "id": "n11",
    "scene": "resilience",
    "caption": "المرونة: تتعطل حقيبة الإصابات، فيظهر تنبيه بسببه وبياناته وبديل جاهز.",
-   "tts": "المُرونَة: تَتَعَطَّلُ حَقيبَةُ الإصابات، فَيَظهَرُ تَنبيهٌ بِسَبَبِهِ وَبَياناتِهِ وَبَديلٍ جاهِز."
+   "tts": "المُرونَة: تَتَعَطَّلُ حَقيبَةُ الإصابات، فَيَظهَرُ تَنبيهٌ بِسَبَبِهِ وَبَياناتِهِ وَبَديلٍ جاهِز.",
+   "caption_en": "Resilience: a trauma kit fails. An alert shows the reason, the data and a ready alternative."
   },
   {
    "id": "n12",
    "scene": "resilience",
    "caption": "ويعتمد المدير البديل؛ لا شيء يُنفَّذ تلقائيًا.",
-   "tts": "وَيَعتَمِدُ المُديرُ البَديل، لا شَيءَ يُنَفَّذُ تِلقائِيّاً."
+   "tts": "وَيَعتَمِدُ المُديرُ البَديل، لا شَيءَ يُنَفَّذُ تِلقائِيّاً.",
+   "caption_en": "The manager approves the alternative. Nothing runs automatically."
   },
   {
    "id": "n13",
    "scene": "resilience",
    "caption": "وعند انقطاع الاتصال يظهر آخر تحديث، ولا تُعرض البيانات القديمة كمباشرة.",
-   "tts": "وَعِندَ انقِطاعِ الاتِّصالِ يَظهَرُ آخِرُ تَحديث، وَلا تُعرَضُ البَياناتُ القَديمَةُ كَمُباشِرَة."
+   "tts": "وَعِندَ انقِطاعِ الاتِّصالِ يَظهَرُ آخِرُ تَحديث، وَلا تُعرَضُ البَياناتُ القَديمَةُ كَمُباشِرَة.",
+   "caption_en": "When connectivity drops, the last update is shown and stale data is never presented as live."
   },
   {
    "id": "n14",
    "scene": "citizen",
    "caption": "مشاركة المواطن: توجيه موثّق بعدة لغات دون تفاصيل حساسة، فيؤكد التزامه.",
-   "tts": "مُشارَكَةُ المُواطِن: تَوجيهٌ مُوَثَّقٌ بِعِدَّةِ لُغاتٍ دونَ تَفاصيلَ حَسّاسَة، فَيُؤَكِّدُ التِزامَه."
+   "tts": "مُشارَكَةُ المُواطِن: تَوجيهٌ مُوَثَّقٌ بِعِدَّةِ لُغاتٍ دونَ تَفاصيلَ حَسّاسَة، فَيُؤَكِّدُ التِزامَه.",
+   "caption_en": "Citizen participation: a verified directive in several languages, with no sensitive details. The citizen confirms."
   },
   {
    "id": "n15",
    "scene": "recovery",
    "caption": "التعافي: تُغلق المهام، ويصدر تقرير أداء محسوب من سجل المحاكاة.",
-   "tts": "التَّعافي: تُغلَقُ المَهامّ، وَيَصدُرُ تَقريرُ أَداءٍ مَحسوبٌ مِن سِجِلِّ المُحاكاة."
+   "tts": "التَّعافي: تُغلَقُ المَهامّ، وَيَصدُرُ تَقريرُ أَداءٍ مَحسوبٌ مِن سِجِلِّ المُحاكاة.",
+   "caption_en": "Recovery: tasks are closed and a performance report is computed from the simulation log."
   },
   {
    "id": "n16",
    "scene": "recovery",
    "caption": "وإجراء تحسين له مسؤول وموعد متابعة، ثم يُغلق الملف.",
-   "tts": "وَإجراءُ تَحسينٍ لَهُ مَسؤولٌ وَمَوعِدُ مُتابَعَة، ثُمَّ يُغلَقُ المِلَفّ."
+   "tts": "وَإجراءُ تَحسينٍ لَهُ مَسؤولٌ وَمَوعِدُ مُتابَعَة، ثُمَّ يُغلَقُ المِلَفّ.",
+   "caption_en": "An improvement action gets an owner and a follow-up date, then the file is closed."
   },
   {
    "id": "n17",
    "scene": "outro",
    "caption": "جاهزية مشتركة. عمليات موحّدة. استجابة مرنة.",
-   "tts": "جاهِزِيَّةٌ مُشتَرَكَة. عَمَليّاتٌ مُوَحَّدَة. اِستِجابَةٌ مَرِنَة."
+   "tts": "جاهِزِيَّةٌ مُشتَرَكَة. عَمَليّاتٌ مُوَحَّدَة. اِستِجابَةٌ مَرِنَة.",
+   "caption_en": "Shared readiness. Unified operations. Resilient response."
   },
   {
    "id": "n18",
    "scene": "outro",
    "caption": "ساهم معنا: راجع السيناريو، طوّر التكاملات، أو صمّم تقييمًا علميًا للأداء.",
-   "tts": "ساهِم مَعَنا: راجِعِ السّيناريو، طَوِّرِ التَّكامُلات، أَو صَمِّم تَقييماً عِلمِيّاً لِلأَداء."
+   "tts": "ساهِم مَعَنا: راجِعِ السّيناريو، طَوِّرِ التَّكامُلات، أَو صَمِّم تَقييماً عِلمِيّاً لِلأَداء.",
+   "caption_en": "Contribute: review the scenario, build integrations, or design a scientific evaluation."
   }
  ]
 }

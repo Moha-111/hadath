@@ -26,10 +26,21 @@ CHROMIUM_PATH=/path/to/chrome node recordings/record.mjs http://localhost:4173/ 
 python3 recordings/mux.py recordings/out recordings/out/tts recordings/out/hadath-simulation.mp4
 ```
 
+### نسخة إنجليزية دون صوت
+
+واجهة إنجليزية، وترجمة إنجليزية ظاهرة على الشاشة، ومساران للترجمة (إنجليزي ثم عربي) دون تعليق صوتي. لا تحتاج Piper:
+
+```bash
+VIDEO_LANG=en CHROMIUM_PATH=/path/to/chrome node recordings/record.mjs http://localhost:4173/ - recordings/out-en
+python3 recordings/mux.py recordings/out-en - recordings/out-en/hadath-simulation-en.mp4
+```
+
+يُعرض كل سطر مدة قراءة تُحسب من طوله (بين 4.5 و9 ثوانٍ).
+
 يتحقق `record.mjs` في النهاية من عدم ظهور أي رسالة رفض في التطبيق ومن أن حالة الحدث `closed`، ويكتبها في `out/timeline.json`.
 
 </div>
 
 ---
 
-**English:** the video is a real recording of the running app — a Playwright script clicks the app's own buttons (and uses the built-in scenario player `runTo` for a few repetitive steps), with Arabic narration generated locally by Piper and Arabic subtitles. Steps above; the Piper Arabic voice model is not bundled — check its license before reuse.
+**English:** the video is a real recording of the running app — a Playwright script clicks the app's own buttons (and uses the built-in scenario player `runTo` for a few repetitive steps), with Arabic narration generated locally by Piper and Arabic subtitles. Steps above. For a silent English cut with English + Arabic subtitle tracks, run with `VIDEO_LANG=en` and pass `-` instead of the TTS directory (no Piper needed). The Piper Arabic voice model is not bundled — check its license before reuse.
