@@ -13,7 +13,7 @@
 
 > The citizen is a partner, a responder according to their qualification, and committed to official directives.
 
-[README بالعربية](README.md)
+**[Try the live demo](https://moha-111.github.io/hadath/)** · [README بالعربية](README.md)
 
 > [!WARNING]
 > **Research and simulation prototype only — NOT an approved system for use in real emergencies.**
