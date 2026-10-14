@@ -5,3 +5,4 @@ recordings/out/
 .DS_Store
 .env
 .env.*
+*.tsbuildinfo
