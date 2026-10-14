@@ -1,7 +1,7 @@
 import { useT } from '../i18n/i18n';
 import { Card } from './common';
 
-export const REPO_URL = 'https://github.com/OWNER/hadath'; // placeholder until the repository is published
+export const REPO_URL = 'https://github.com/Moha-111/hadath';
 
 export function AboutView() {
   const { t } = useT();
